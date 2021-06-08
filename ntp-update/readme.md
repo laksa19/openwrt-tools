@@ -7,7 +7,7 @@ opkg update && opkg install fping wget ntpdate
 ## install ntpupdate script
 
 ```bash
-wget --show-progress --progress=bar:force -qO /usr/bin/ntpupdate https://raw.githubusercontent.com/laksa19/openwrt-tools/master/ntpu-pdate/ntpupdate && chmod +x /usr/bin/ntpupdate 
+wget --show-progress --progress=bar:force -qO /usr/bin/ntpupdate https://raw.githubusercontent.com/laksa19/openwrt-tools/master/ntp-update/ntpupdate && chmod +x /usr/bin/ntpupdate 
 ```
 
 ## run script at startup
