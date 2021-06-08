@@ -1,3 +1,4 @@
+# Fast update date and time when OpenWrt connect internet
 ## install fping wget ntpdate
 
 ```bash
