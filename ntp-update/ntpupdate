@@ -18,7 +18,7 @@ if [ "$pa" != "alive" ] && [ "$pb" != "alive" ] && [ "$pc" != "alive" ]; then
 	inetCheck
 else
 	echo "Internet Up!"
-    echo "Updating time..."
+    	echo "Updating NTP..."
 	ntpdate -s time.cloudflare.com
 	clear
 fi
