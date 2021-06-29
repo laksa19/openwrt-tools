@@ -5,7 +5,7 @@ ipCheck() {
 # serverip adalah ip server vpn yang digunakan, sesuaikan dengan server masing-masing.
 serverip="103.31.32.33"
 #
-checkmyip=$(curl http://ifconfig.io)
+checkmyip=$(dig +short myip.opendns.com @resolver1.opendns.com)
 #
 if [ $checkmyip = $serverip ]; then
         echo "IP sesuai"
@@ -13,17 +13,26 @@ if [ $checkmyip = $serverip ]; then
         ipCheck
 else
         echo "IP tidak sesuai"
-        /root/libernet/bin/service.sh -ds
+        stopLibernet
         sleep 10
-        /root/libernet/bin/service.sh -sl
+        startLibernet
         sleep 20
         ipCheck
 fi
 }
+#stop libernet
+stopLibernet(){
+    curl -d '{"action":"stop_libernet"}' -H "Content-Type: application/json" -X POST http://192.168.1.1/libernet/api.php
+}
+
+#start Libernet
+startLibernet(){
+    curl -d '{"action":"start_libernet"}' -H "Content-Type: application/json" -X POST http://192.168.1.1/libernet/api.php
+}
 #
 sleep 10
 #start libernet
-/root/libernet/bin/service.sh -sl
+startLibernet
 #
 sleep 15
 #
