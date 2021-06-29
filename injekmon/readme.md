@@ -6,6 +6,11 @@ Cara kerjanya, ketika IP server yang sudah ditentukan sesuai IP yang digunakan s
 - Cek IP server => sesuai => loop cek IP
 - Cek IP server => tidak sesuai => stop libernet => start libernet => loop cek IP
 
+### Persiapan
+```bash
+opkg update && opkg install bind-dig
+```
+
 ### Instalasi
 
 1. Download script https://raw.githubusercontent.com/laksa19/openwrt-tools/main/injekmon/injekmon
