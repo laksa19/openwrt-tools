@@ -5,7 +5,7 @@ ipCheck() {
 # serverip adalah ip server vpn yang digunakan, sesuaikan dengan server masing-masing.
 serverip="103.31.32.33"
 #
-checkmyip=$(dig +short myip.opendns.com @resolver1.opendns.com)
+checkmyip=$(curl http://ifconfig.io)
 #
 if [ $checkmyip = $serverip ]; then
         echo "IP sesuai"
