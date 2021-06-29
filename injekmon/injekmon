@@ -1,0 +1,30 @@
+#!/bin/bash
+# injek monitor by Laksamadi Guko
+# check ip
+ipCheck() {
+# serverip adalah ip server vpn yang digunakan, sesuaikan dengan server masing-masing.
+serverip="103.31.32.33"
+#
+checkmyip=$(dig +short myip.opendns.com @resolver1.opendns.com)
+#
+if [ $checkmyip = $serverip ]; then
+        echo "IP sesuai"
+        sleep 15
+        ipCheck
+else
+        echo "IP tidak sesuai"
+        /root/libernet/bin/service.sh -ds
+        sleep 10
+        /root/libernet/bin/service.sh -sl
+        sleep 20
+        ipCheck
+fi
+}
+#
+sleep 10
+#start libernet
+/root/libernet/bin/service.sh -sl
+#
+sleep 15
+#
+ipCheck
