@@ -22,3 +22,8 @@ opkg update && opkg install bind-dig
     ```screen -AmdS injekmon /usr/bin/injekmon```
 
     sebelum ```exit 0```
+    
+ 6. Reboot
+
+### Catatan
+Di Libernet tidak perlu centang PING loop dan Auto start.
