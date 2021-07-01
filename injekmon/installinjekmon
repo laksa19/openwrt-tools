@@ -6,7 +6,7 @@ wget --show-progress --progress=bar:force -qO /usr/bin/serviceinjekmon https://r
 echo "Cara pakai:"
 echo ""
 echo "injekmon ip-server-vpn"
-echo "Contohh:"
+echo "Contoh:"
 echo "injekmon 130.31.32.33"
 echo ""
 echo "Untuk jalan di startup tambahkan baris berikut"
