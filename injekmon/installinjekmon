@@ -2,14 +2,17 @@
 
 wget --show-progress --progress=bar:force -qO /usr/bin/injekmon https://raw.githubusercontent.com/laksa19/openwrt-tools/master/injekmon/injekmon && chmod +x /usr/bin/injekmon
 wget --show-progress --progress=bar:force -qO /usr/bin/serviceinjekmon https://raw.githubusercontent.com/laksa19/openwrt-tools/master/injekmon/serviceinjekmon && chmod +x /usr/bin/serviceinjekmon
-
+echo ""
 echo "Cara pakai:"
 echo ""
 echo "injekmon ip-server-vpn"
+echo ""
 echo "Contoh:"
 echo "injekmon 130.31.32.33"
 echo ""
 echo "Untuk jalan di startup tambahkan baris berikut"
+echo ""
 echo "/usr/bin/injekmon"
+echo ""
 echo "sebelum exit 0"
 echo ""
