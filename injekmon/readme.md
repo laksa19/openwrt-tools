@@ -8,7 +8,7 @@ Cara kerjanya, ketika IP server yang sudah ditentukan sesuai IP yang digunakan s
 
 ### Persiapan
 ```bash
-opkg update && opkg install bind-dig
+opkg update && opkg install bind-dig wget
 ```
 
 ### Instalasi
