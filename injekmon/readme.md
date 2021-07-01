@@ -30,6 +30,18 @@ wget --show-progress --progress=bar:force -qO installinjekmon https://raw.github
 
     sebelum ```exit 0```
     
+    Bisa edit dari WinSCP atau menggunakan nano langsung dari terminal.
+
+    Edit dengan nano
+
+    ```bash
+    nano /etc/rc.local
+    ```
+    
+    tambahkan ```/usr/bin/injekmon``` sebelum ```exit 0```
+    
+    kemudian tekan CTRL + X, lalu Y dan Enter.
+    
  4. Reboot
 
 ### Cara penggunaan
