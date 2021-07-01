@@ -13,17 +13,34 @@ opkg update && opkg install bind-dig
 
 ### Instalasi
 
-1. Download script https://raw.githubusercontent.com/laksa19/openwrt-tools/main/injekmon/injekmon
-2. Edit bagian baris 6 "serverip=", sesuaikan dengan ip server masing-masing.
-3. Upload ke OpenWrt taruh di ```/usr/bin```.
-4. ketikkan perintah di terminal ```chmod +x /usr/bin/injekmon```.
-5. Tambahkan ke rc.local agar scriptnya berjalan saat startup, dengan cara edit file ```/etc/rc.local```, isikan perintah berikut
+1. Download script
 
-    ```screen -AmdS injekmon /usr/bin/injekmon```
+```bash
+wget --show-progress --progress=bar:force -qO installinjekmon https://raw.githubusercontent.com/laksa19/openwrt-tools/master/injekmon/installinjekmon && chmod +x installinjekmon
+```
+
+2. Install script 
+
+```bash
+./installinjekmon
+```
+3. Tambahkan ke rc.local agar scriptnya berjalan saat startup, dengan cara edit file ```/etc/rc.local```, isikan baris berikut
+
+    ```/usr/bin/injekmon```
 
     sebelum ```exit 0```
     
- 6. Reboot
+ 4. Reboot
+
+### Cara penggunaan
+
+Gunakan perintah berikut untuk menentukan ip server vpn.
+```injekmon ip-server-vpn```
+
+Contoh:
+```bash
+injekmon 130.31.32.33
+```
 
 ### Catatan
 Di Libernet tidak perlu centang PING loop dan Auto start.
