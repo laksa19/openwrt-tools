@@ -56,3 +56,7 @@ injekmon 130.31.32.33
 
 ### Catatan
 Di Libernet tidak perlu centang PING loop dan Auto start.
+
+
+### Panduan YouTube
+https://youtu.be/5fCJl8-0bKU
