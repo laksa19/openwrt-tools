@@ -1,12 +1,18 @@
 #!/bin/bash
-#!/bin/bash
 # injek monitor Libernet by Laksamadi Guko
 
+#stop libernet
+stopLibernet(){
+    curl -d '{"action":"stop_libernet"}' -H "Content-Type: application/json" -X POST http://192.168.1.1/libernet/api.php
+}
+
+#restart service
 restartinjek (){
+stopLibernet
+sleep 5
 killall -q serviceinjekmon
 screen -AmdS serviceinjekmon /usr/bin/serviceinjekmon
 }
-
 
 if [ "$1" != "" ]; then
 echo "$1" > /root/injekmon.txt
