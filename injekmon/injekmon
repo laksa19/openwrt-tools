@@ -1,39 +1,17 @@
 #!/bin/bash
-# injek monitor by Laksamadi Guko
-# check ip
-ipCheck() {
-# serverip adalah ip server vpn yang digunakan, sesuaikan dengan server masing-masing.
-serverip="103.31.32.33"
-#
-checkmyip=$(dig +short myip.opendns.com @resolver1.opendns.com)
-#
-if [ $checkmyip = $serverip ]; then
-        echo "IP sesuai"
-        sleep 15
-        ipCheck
-else
-        echo "IP tidak sesuai"
-        stopLibernet
-        sleep 10
-        startLibernet
-        sleep 20
-        ipCheck
-fi
-}
-#stop libernet
-stopLibernet(){
-    curl -d '{"action":"stop_libernet"}' -H "Content-Type: application/json" -X POST http://192.168.1.1/libernet/api.php
+#!/bin/bash
+# injek monitor Libernet by Laksamadi Guko
+
+restartinjek (){
+killall -q serviceinjekmon
+screen -AmdS serviceinjekmon /usr/bin/serviceinjekmon
 }
 
-#start Libernet
-startLibernet(){
-    curl -d '{"action":"start_libernet"}' -H "Content-Type: application/json" -X POST http://192.168.1.1/libernet/api.php
-}
-#
-sleep 10
-#start libernet
-startLibernet
-#
-sleep 15
-#
-ipCheck
+
+if [ "$1" != "" ]; then
+echo "$1" > /root/injekmon.txt
+cat /root/injekmon.txt
+restartinjek
+else
+restartinjek
+fi
