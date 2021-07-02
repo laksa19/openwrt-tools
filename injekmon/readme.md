@@ -54,6 +54,8 @@ Contoh:
 injekmon 130.31.32.33
 ```
 
+Untuk stop ```killall serviceinjekmon```
+
 ### Catatan
 Di Libernet tidak perlu centang PING loop dan Auto start.
 
