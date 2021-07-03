@@ -5,7 +5,8 @@ ipCheck() {
 # serverip adalah ip server vpn yang digunakan, sesuaikan dengan server masing-masing.
 serverip=$(cat /root/injekmon.txt)
 #
-checkmyip=$(dig +short myip.opendns.com @resolver1.opendns.com)
+#checkmyip=$(dig +short myip.opendns.com @resolver1.opendns.com)
+checkmyip=$(curl http://ifconfig.io)
 
 if [ "$checkmyip" = "$serverip" ]; then
     echo "IP sesuai"
