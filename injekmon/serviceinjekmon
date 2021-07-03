@@ -10,7 +10,7 @@ checkmyip=$(curl http://ifconfig.io)
 
 if [ "$checkmyip" = "$serverip" ]; then
     echo "IP sesuai"
-        sleep 15
+        sleep 30
         ipCheck
 else
     echo "IP tidak sesuai"
